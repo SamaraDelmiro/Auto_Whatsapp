@@ -1,0 +1,14 @@
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.by import By
+
+servico = Service(ChromeDriverManager().install())
+
+options = webdriver.ChromeOptions()
+options.add_argument(r'user-data-dir=C:\Users\Samara Delmiro\AppData\Local\Google\Chrome\User Data\Profile 2')
+#para encontrar este usuário, acesse  chrome://version/  seu usuário estará  no título 'CAMINHO DO PERFIL'
+navegador = webdriver.Chrome(service=servico, options=options)
+
+navegador.get ("https://web.whatsapp.com")
+#A primeira vez qye for entrar no whatsapp de forma remota, será necessário abrir com QRCODE de forma manual.
